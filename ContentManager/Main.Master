@@ -1,0 +1,77 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Main.master.cs" Inherits="ContentManager.Main" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title>Welcome to Best Buy Canada</title>
+    <link href="Content/main.css" rel="stylesheet" type="text/css" media="screen" />
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <div id="wrapper">
+	<div id="header">
+		<div id="logo">
+			<h1><a href="Default.aspx">Best Buy Canada</a></h1>			
+		</div>	
+	</div>
+	<!-- end #header -->	
+    <form id="form1" runat="server">
+    <div id="page">
+		<div id="page-bgtop">
+			<div id="page-bgbtm">
+				<div id="content">
+					<asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server" />   		
+					
+					<div style="clear: both;"> </div>
+				</div>
+				<!-- end #content -->
+				<div id="sidebar">					
+                    <table class="login" align="center">
+                    <tr>
+                        <td colspan="2" align="center">Administrator Login</td>                        
+                    </tr>
+                    <tr>
+                        <td style="width: 80px" align="right">Username: </td>
+                        <td><asp:TextBox ID="txtUsername" runat="server" style="width: 120px" required/></td>
+                    </tr>
+                    <tr>
+                        <td align="right">Password: </td>
+                        <td><asp:TextBox ID="txtPassword" TextMode="Password" runat="server" style="width: 120px" required/></td>
+                    </tr>
+                    <tr>
+                        <td>&nbsp;</td>
+                        <td align="left"><asp:Button runat="server" Text="Login" OnClick="btnLogin_Click"/></td>
+                    </tr>
+                    <tr>
+                        <td colspan="2" align="center"><asp:Label CssClass="req" id="lblErrLogin" runat="server" /></td>                        
+                    </tr>
+                    </table>
+                    <div>&nbsp;</div>
+                    <ul>				
+                        <li>
+							<h2>Categories</h2>
+                            <ul>
+                            <asp:Repeater ID="rptCategory" runat="server">
+                            <ItemTemplate>
+                            <li><asp:LinkButton ID="lnkCategory" runat="server" 
+                            CommandArgument='<%# DataBinder.Eval(Container.DataItem, "CategoryId") %>'
+                            Text='<%# DataBinder.Eval(Container.DataItem, "CatName") %>'
+                            OnCommand="lnkCategory_Command" /></li>
+                            </ItemTemplate>                            
+                            </asp:Repeater>
+                            </ul>  				
+                        </li>                   
+											
+					</ul></div>
+				<!-- end #sidebar -->
+				<div style="clear: both;"> </div>   
+            </div>
+		</div>
+	</div>
+	<!-- end #page -->
+    </form>
+</div>
+</body>
+</html>

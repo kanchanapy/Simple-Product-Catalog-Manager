@@ -1,0 +1,18 @@
+Only authorized users are allowed to access the admin area. 
+Please enter "admin" and "test123" to gain access to the admin area.
+
+Categories and products support create, update and delete operations.
+
+When clicked on 'Manage Products' in a category, this will show all products from that category as well as sub categories.
+
+Each category can be assigned either a blank parent category,  which means it is the topmost in the node and any other category, other than itself and its children.
+
+Each product can be assigned to multiple categories, including category as well as its sub category.
+
+Deleting a category, will ask for confirmation, and if a "yes" response is received, the category as well as its sub categories will be deleted. The products in those categories are not deleted. And it is not necessary to delete or reassign the categories to which the product refers before being deleted. This is done because the number of products can be fairly large and it's not practical to go through all of them. The products can later be reassigned to other categories as needed.
+
+--------------------------------------------------------
+
+To make the Database work properly, change the connectionString in Web.config file.
+The database can be created in two ways, either restore in SQL server using the DatabaseBackup.bak file. Or, execute CreateDatabase.sql, both are included in the main website folder. 
+
