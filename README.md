@@ -5,5 +5,5 @@ This sample is provided as is, and as long as you reference where it came from, 
 
 This sample is for those trying to learn .NET. And for your convenience, I have also provided SQL files associated with it.
 
-There will be another document with instructions detailing the steps needed to make it work.
+Please read instructions.txt with detail steps to make it work.
 
